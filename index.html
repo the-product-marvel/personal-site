@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Product Marvel — Maureen</title>
+
+    <!-- SEO -->
+    <meta name="description"
+        content="Product Manager building human-centered digital products at the intersection of strategy, design, and engineering." />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="The Product Marvel — Product Portfolio" />
+    <meta property="og:description" content="Human-centered product thinking, case studies, and leadership." />
+    <meta property="og:image" content="assets/og-preview.png" />
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: #ffffff;
+            color: #111;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 2.5rem 1.5rem;
+        }
+
+        .mauve {
+            color: #ce9c9c;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        header img {
+            width: 260px;
+            margin-bottom: 1rem;
+        }
+
+        h1,
+        h2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(12px);
+            animation: fadeUp 0.7s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(206, 156, 156, 0.25);
+        }
+
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        a {
+            color: #ce9c9c;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <header class="fade-in">
+            <img src="assets/the-product-marvel-logo-transparent.png" alt="The Product Marvel Logo" />
+            <h1>Hey, I’m <span class="mauve">Maureen</span> 👋🏽</h1>
+            <p>
+                I build <strong>human-centered digital products</strong> where
+                strategy, design, and engineering meet.
+                Think Swiss-Army-Knife PM — calm in ambiguity, sharp on execution.
+            </p>
+        </header>
+
+        <section class="fade-in">
+            <h2 class="mauve">Featured Case Studies</h2>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Content Translation @ Scale</h3>
+                    <p>
+                        Enabling global knowledge access through human-in-the-loop workflows.
+                    </p>
+                    <a href="projects/content-translation.html">Read case study →</a>
+                </div>
+
+                <!-- Add more cards as needed -->
+            </div>
+        </section>
+
+        <section class="fade-in" style="margin-top:3rem;">
+            <h2 class="mauve">How I Think</h2>
+            <p>
+                My product philosophy, decision frameworks, and leadership approach.
+            </p>
+            <a href="how-i-think.html">Explore my thinking →</a>
+        </section>
+
+        <section class="fade-in" style="margin-top:3rem;">
+            <h2 class="mauve">Let’s Connect</h2>
+            <p>
+                I’m open to thoughtful conversations and meaningful work.
+            </p>
+            <a href="https://github.com/the-product-marvel">GitHub</a>
+            &nbsp;•&nbsp;
+            <a href="https://forms.gle/REPLACE_WITH_FORM">Contact form</a>
+        </section>
+
+        <footer>
+            © The Product Marvel
+        </footer>
+
+    </div>
+</body>
+
+</html>
