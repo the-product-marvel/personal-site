@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Product Marvel — Maureen</title>
+    <title>The Product Marvel - Maureen</title>
 
     <!-- SEO -->
     <meta name="description"
         content="Product Manager building human-centered digital products at the intersection of strategy, design, and engineering." />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="The Product Marvel — Product Portfolio" />
+    <meta property="og:title" content="The Product Marvel - Product Portfolio" />
     <meta property="og:description" content="Human-centered product thinking, case studies, and leadership." />
     <meta property="og:image" content="assets/og-preview.png" />
 
@@ -107,8 +107,9 @@
             <h1>Hey, I’m <span class="mauve">Maureen</span> 👋🏽</h1>
             <p>
                 I build <strong>human-centered digital products</strong> where
-                strategy, design, and engineering meet.
-                Think Swiss-Army-Knife PM — calm in ambiguity, sharp on execution.
+                strategy, design, and engineering shake hands, and complex ideas meet simple, intuitive execution.
+                Think of me as a Swiss-Army-Knife leader who thrives in the messy middle: I bring the right tools to cut
+                through complexity, bring clarity to chaos, and turn <i>“what if?”</i> into </i>“it’s live!”</i>
             </p>
         </header>
 
@@ -147,8 +148,14 @@
         </section>
 
         <footer>
-            © The Product Marvel
+            <div>
+                © <span class="footer-brand">The Product Marvel</span> <span id="year"></span>
+            </div>
         </footer>
+
+        <script>
+            document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
 
     </div>
 </body>
