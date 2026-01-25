@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How I Think - The Product Marvel</title>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --mauve: #ce9c9c;
+            --mauve-soft: rgba(206, 156, 156, 0.08);
+        }
+
+        body {
+            font-family: 'Work Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #ffffff;
+            color: #111;
+            max-width: 860px;
+            margin: auto;
+            padding: 3rem 1.5rem 4rem;
+            line-height: 1.7;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, var(--mauve), #e6bcbc);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        h2 {
+            color: var(--mauve);
+            margin-bottom: 0.75rem;
+            font-size: 1.4rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        .lead {
+            font-size: 1.05rem;
+            color: #333;
+            max-width: 720px;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+        }
+
+        /* Working With Me */
+        .principles {
+            list-style: none;
+            padding: 0;
+            margin-top: 1.5rem;
+        }
+
+        .principles li {
+            padding: 1rem 1.25rem;
+            margin-bottom: 1rem;
+            border-left: 3px solid transparent;
+            border-radius: 6px;
+            transition: all 0.25s ease;
+        }
+
+        .principles li:hover {
+            border-left-color: var(--mauve);
+            background: var(--mauve-soft);
+        }
+
+        .principles strong {
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        footer {
+            margin-top: 5rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #555;
+            position: relative;
+            padding: 2.5rem 1rem 1.5rem;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 120%, rgba(206, 156, 156, 0.25), transparent 60%);
+            opacity: 0;
+            animation: footerGlow 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes footerGlow {
+
+            0%,
+            100% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .footer-brand {
+            font-weight: 600;
+            background: linear-gradient(90deg, var(--mauve), #e6bcbc);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>How I Think</h1>
+        <p class="lead">
+            This page is a window into how I approach product problems: how I reason,
+            make trade-offs, and work with people when the path forward isn’t obvious.
+        </p>
+    </header>
+
+    <section>
+        <h2>🧭 Product Philosophy</h2>
+        <p>
+            Great products live at the intersection of <strong>empathy</strong>,
+            <strong>strategy</strong>, and <strong>technical feasibility</strong>.
+            I believe execution without strategy is noise, and strategy without
+            execution is theory. The real work happens when both move together.
+        </p>
+    </section>
+
+    <section>
+        <h2>🛠️ My Default Approach</h2>
+        <ul>
+            <li>Start with real user pain, not assumptions</li>
+            <li>Define success and failure before proposing solutions</li>
+            <li>Optimize early for learning, not perfection</li>
+            <li>Ship clarity, not complexity</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>⚖️ Trade-offs I Take Seriously</h2>
+        <p>
+            I say no to features that increase cognitive load, timelines that burn
+            teams out, and metrics that look impressive but don’t reflect real value.
+            Sustainable progress matters more than short-term wins.
+        </p>
+    </section>
+
+    <section class="working-with-me">
+        <h2>🤝 Working With Me</h2>
+
+        <ul class="principles">
+            <li>
+                <strong>Calm in ambiguity</strong>
+                <span>I create structure when problems are unclear and help teams move forward with confidence.</span>
+            </li>
+
+            <li>
+                <strong>Direct, but kind</strong>
+                <span>I value honest conversations, early feedback, and clarity without ego.</span>
+            </li>
+
+            <li>
+                <strong>Opinionated, not stubborn</strong>
+                <span>I bring a strong point of view and change course when better evidence appears.</span>
+            </li>
+
+            <li>
+                <strong>Systems thinker</strong>
+                <span>I zoom out to understand how decisions affect users, teams, and operations.</span>
+            </li>
+
+            <li>
+                <strong>Human + technical</strong>
+                <span>I translate between business goals, user needs, and engineering realities.</span>
+            </li>
+        </ul>
+    </section>
+
+    <footer>
+        <div>
+            © <span class="footer-brand">The Product Marvel</span> <span id="year"></span>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+
+</html>
