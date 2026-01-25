@@ -78,8 +78,8 @@ Think of me as a **Swiss-Army-Knife leader** who thrives in the messy middle: I 
 > 💭 *“Technology is most powerful when it’s rooted in empathy and strategy.”*
 
 <p align="center">
-  <img src="assets/asana-foundations-certification-badge.png" alt="Asana Foundations" width="100"/>
-  <img src="assets/asana-ai-for-work-certification-badge.png" alt="AI for Work" width="100"/>
+  <img src="assets/images/asana-foundations-certification-badge.png" alt="Asana Foundations" width="100"/>
+  <img src="assets/images/asana-ai-for-work-certification-badge.png" alt="AI for Work" width="100"/>
 </p>
 
 <!--
