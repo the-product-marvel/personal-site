@@ -140,7 +140,7 @@ header img {
 }
 
 .footer img {
-    width: 200px;
+    width: 150px;
     margin-bottom: 1rem;
 }
 
@@ -149,6 +149,28 @@ header img {
     background: linear-gradient(90deg, #ce9c9c, #e6bcbc);
     -webkit-background-clip: text;
     color: transparent;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 120%, rgba(206, 156, 156, 0.25), transparent 60%);
+    opacity: 0;
+    animation: footerGlow 6s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes footerGlow {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }
 
 .footer-brand {
