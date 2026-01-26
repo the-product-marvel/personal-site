@@ -1,3 +1,5 @@
+console.log("partials.js loaded");
+
 document.addEventListener('DOMContentLoaded', async () => {
     const slots = document.querySelectorAll('[data-partial]');
 
