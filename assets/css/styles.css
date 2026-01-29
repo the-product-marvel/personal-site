@@ -121,6 +121,13 @@ header {
 header img {
     width: 600px;
     margin: 0 auto 1rem;
+    display: block;
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
 }
 
 .tagline,
@@ -128,6 +135,7 @@ header img {
     background: linear-gradient(90deg, var(--color-mauve), #e6bcbc);
     -webkit-background-clip: text;
     color: transparent;
+    line-height: 1;
 }
 
 .lead {
