@@ -113,21 +113,39 @@ section {
    HEADER
    ========================================================= */
 
-header {
+header.reveal {
+    display: grid;
+    place-items: center;
     text-align: center;
+    gap: 0.75rem;
     margin-bottom: 3rem;
 }
 
-.header-brand {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
+/* Logo */
+header.reveal img {
+    display: block;
+    margin: 0;
+    max-width: 100%;
 }
 
-.site-logo {
-    display: block;
-    width: 500px;
+/* Tagline */
+header.reveal .tagline {
+    line-height: 1.1;
+    margin: 0;
+}
+
+/* Main heading */
+header.reveal h1 {
+    margin: 0;
+    line-height: 1.1;
+}
+
+/* Intro paragraph */
+header.reveal p {
+    max-width: 720px;
+    margin: 0;
+    color: var(--color-muted);
+    font-size: 1.05rem;
 }
 
 .tagline,
