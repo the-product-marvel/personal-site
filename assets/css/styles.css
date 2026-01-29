@@ -146,6 +146,15 @@ header {
     text-justify: inter-word;
 }
 
+.section-divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right,
+            transparent,
+            rgba(206, 156, 156, 0.4),
+            transparent);
+    margin: 4rem 0;
+}
 
 /* =========================================================
    HOW I THINK — WORKING WITH ME
@@ -230,7 +239,7 @@ header {
 }
 
 .footer-badges img {
-    width: 100px;
+    width: 150px;
     opacity: 0.9;
 }
 
