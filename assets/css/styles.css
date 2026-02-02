@@ -151,8 +151,10 @@ header.reveal p {
 .tagline,
 .page-title {
     background: linear-gradient(90deg, var(--color-mauve), #e6bcbc);
+    background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+    -webkit-text-fill-color: transparent;
     line-height: 1;
 }
 
@@ -258,16 +260,20 @@ header.reveal p {
 .footer-quote {
     font-style: italic;
     background: linear-gradient(90deg, var(--color-mauve), #e6bcbc);
+    background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+    -webkit-text-fill-color: transparent;
     margin-bottom: 1rem;
 }
 
 .footer-brand {
     font-weight: 600;
     background: linear-gradient(90deg, var(--color-mauve), var(--color-mauve-soft));
+    background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+    -webkit-text-fill-color: transparent;
 }
 
 .footer-badges {
