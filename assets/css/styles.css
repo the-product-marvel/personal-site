@@ -220,6 +220,49 @@ header.reveal p {
 }
 
 /* =========================================================
+   EXTRAS / BEYOND THE ROADMAP
+   ========================================================= */
+
+.extras.playful .extras-list span {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    cursor: default;
+}
+
+.extras.playful .extras-list span:hover {
+    transform: translateY(-3px) rotate(-0.5deg);
+    background: rgba(206, 156, 156, 0.12);
+    box-shadow: 0 8px 20px rgba(206, 156, 156, 0.25);
+}
+
+.extras-list span {
+    animation: floatIn 0.6s ease both;
+}
+
+.extras-list span:nth-child(2) {
+    animation-delay: 0.05s;
+}
+
+.extras-list span:nth-child(3) {
+    animation-delay: 0.1s;
+}
+
+.extras-list span:nth-child(4) {
+    animation-delay: 0.15s;
+}
+
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================================
    FOOTER - (Unified + Glow)
    ========================================================= */
 
