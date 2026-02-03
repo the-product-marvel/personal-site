@@ -1,9 +1,96 @@
-<p class="about-intro">
-    I’m Maureen - a product leader who enjoys the messy middle, where clarity has to be created and decisions are rarely
-    obvious.
-</p>
+<!DOCTYPE html>
+<html lang="en">
 
-<p class="about-body">
-    I care deeply about building products that feel thoughtful, humane, and grounded in real human needs. I’m at my best
-    when I’m learning, observing, and connecting dots - between people, problems, and possibilities.
-</p>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me - The Product Marvel</title>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- Header -->
+        <header>
+            <h1 class="page-title">About Me</h1>
+            <p class="lead">
+                A little context about who I am, how I show up, and the values that shape the way I build and lead.
+            </p>
+        </header>
+
+        <!-- Section: The Human -->
+        <section>
+            <h2>The Human Behind the Product</h2>
+            <p>
+                I’m Maureen - a product leader who feels most at home in the messy middle,
+                where clarity has to be created and decisions are rarely obvious.
+                I’m energized by ambiguity, not because it’s comfortable,
+                but because it’s where meaningful progress begins.
+            </p>
+        </section>
+
+        <!-- Section: What I Care About -->
+        <section>
+            <h2>What I Care About</h2>
+            <p>
+                I care deeply about building products that feel thoughtful, humane,
+                and grounded in real human needs. I’m at my best when I’m learning,
+                observing, and connecting dots — between people, problems,
+                and possibilities.
+            </p>
+
+            <p>
+                I believe good products are rarely the result of lone brilliance.
+                They’re shaped through collaboration, trust, and the willingness
+                to ask better questions before jumping to solutions.
+            </p>
+        </section>
+
+        <!-- Section: How I Show Up -->
+        <section>
+            <h2>How I Show Up</h2>
+            <ul>
+                <li>I lead with empathy and assume positive intent</li>
+                <li>I forgive easily and don’t carry grudges</li>
+                <li>I value clarity over cleverness</li>
+                <li>I believe trust accelerates progress</li>
+            </ul>
+        </section>
+
+        <!-- Section: Beyond the Roadmap -->
+        <section>
+            <h2>Beyond the Roadmap</h2>
+            <p class="section-subtitle">
+                The small, grounding things that keep me curious, balanced, and quietly very good at problem-solving.
+            </p>
+
+            <div class="extras-list">
+                <span>🧱 LEGO building</span>
+                <span>🎨 Coloring & creative play</span>
+                <span>🏀 Basketball</span>
+                <span>🏌🏽‍♀️ Golf</span>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            © <span class="footer-brand">The Product Marvel</span> <span id="year"></span>
+        </footer>
+
+    </main>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+
+</html>
