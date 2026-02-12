@@ -1,0 +1,84 @@
+/* reset + global defaults */
+
+/* =========================================================
+   BASE / RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-base);
+    background: var(--color-bg);
+    color: var(--color-text);
+    margin: 0;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--color-mauve);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+p,
+li {
+    font-size: var(--font-base);
+}
+
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+
+h1 {
+    font-size: var(--font-xxl);
+}
+
+h2 {
+    font-size: var(--font-xl);
+    color: var(--color-mauve);
+}
+
+h3 {
+    font-size: var(--font-lg);
+}
+
+.mauve {
+    color: var(--color-mauve);
+}
+
+.tagline,
+.page-title {
+    background: linear-gradient(90deg, var(--color-mauve), #e6bcbc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    line-height: 1;
+}
+
+.lead {
+    font-size: 1.05rem;
+    color: var(--color-muted);
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+/* =========================================================
+   CONTENT FLOW
+   ========================================================= */
+
+section p {
+    text-align: justify;
+    text-justify: inter-word;
+}

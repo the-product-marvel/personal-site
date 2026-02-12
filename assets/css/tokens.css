@@ -1,0 +1,91 @@
+/* design system (colors, spacing, fonts) */
+
+/* ================================
+   FONTS
+   ================================ */
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* =========================================================
+   DESIGN SYSTEM — TOKENS
+   ========================================================= */
+
+:root {
+    /* Typography */
+    --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-base: 1rem;
+    --font-sm: 0.9rem;
+    --font-lg: 1.125rem;
+    --font-xl: 1.5rem;
+    --font-xxl: 2rem;
+
+    /* Brand */
+    --color-mauve: #ce9c9c;
+    --color-mauve-soft: rgba(206, 156, 156, 0.08);
+
+    /* Neutrals */
+    --color-bg: #ffffff;
+    --color-text: #111111;
+    --color-muted: #555555;
+    --color-border: #eeeeee;
+
+    /* Effects */
+    --glow-soft: rgba(206, 156, 156, 0.25);
+    --glow-faint: rgba(206, 156, 156, 0.15);
+
+    /* Layout */
+    --container-width: 900px;
+
+    /* Spacing */
+    --spacing-md: 1.5rem;
+
+    /* Radius */
+    --radius-sm: 6px;
+    --radius-pill: 999px;
+}
+
+/* =========================================================
+   THEME — DARK MODE (auto)
+   ========================================================= */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-bg: #0f0f10;
+        --color-text: #f3f3f4;
+        --color-muted: #a1a1aa;
+        --color-border: #1f1f23;
+
+        --glow-soft: rgba(206, 156, 156, 0.35);
+        --glow-faint: rgba(206, 156, 156, 0.2);
+    }
+}
