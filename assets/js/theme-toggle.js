@@ -2,6 +2,10 @@
     const root = document.documentElement;
     const storageKey = 'theme';
 
+    function getButton() {
+        return document.querySelector('.theme-toggle');
+    }
+
     function getIcon() {
         return document.getElementById('theme-icon');
     }
@@ -13,26 +17,35 @@
     }
 
     function applyTheme(theme) {
-        if (theme === 'dark') {
+        const isDark = theme === 'dark';
+
+        if (isDark) {
             root.setAttribute('data-theme', 'dark');
-            updateIcon(true);
         } else {
             root.removeAttribute('data-theme');
-            updateIcon(false);
         }
+
+        updateIcon(isDark);
     }
 
-    // Apply saved theme after full DOM + partials load
-    window.addEventListener('load', () => {
-        const savedTheme = localStorage.getItem(storageKey);
-        applyTheme(savedTheme === 'dark' ? 'dark' : 'light');
-    });
-
-    window.toggleTheme = function () {
+    function toggleTheme() {
         const isDark = root.hasAttribute('data-theme');
         const newTheme = isDark ? 'light' : 'dark';
 
         localStorage.setItem(storageKey, newTheme);
         applyTheme(newTheme);
-    };
+    }
+
+    // Wait until full page (including partials) is loaded
+    window.addEventListener('load', () => {
+        // Apply saved theme
+        const savedTheme = localStorage.getItem(storageKey);
+        applyTheme(savedTheme === 'dark' ? 'dark' : 'light');
+
+        // Attach click handler AFTER partials exist
+        const button = getButton();
+        if (button) {
+            button.addEventListener('click', toggleTheme);
+        }
+    });
 })();
