@@ -40,10 +40,12 @@ console.log("Theme toggle loaded");
 
     // Wait until full page (including partials) is loaded
     window.addEventListener('load', () => {
+        console.log("Load fired");
+
         // Apply saved theme
         const savedTheme = localStorage.getItem(storageKey);
         applyTheme(savedTheme === 'dark' ? 'dark' : 'light');
-
+        console.log("Button found:", button);
         // Attach click handler AFTER partials exist
         const button = getButton();
         if (button) {
