@@ -53,36 +53,29 @@
             });
         }
 
-        // =========================================================
-        // PLAYFUL EXTRAS ENHANCEMENTS
-        // =========================================================
-
-        const extras = document.querySelectorAll('.extra-item');
+        /* =========================================================
+           PLAYFUL EXTRAS ENHANCEMENTS (Delegated + Reliable)
+           ========================================================= */
 
         let activeItem = null;
         let offsetX = 0;
         let offsetY = 0;
 
-        // Attach events to each badge
-        extras.forEach((item) => {
-            // Drag start
-            item.addEventListener('mousedown', (e) => {
-                activeItem = item;
-                offsetX = e.offsetX;
-                offsetY = e.offsetY;
+        // Drag start
+        document.addEventListener('mousedown', (e) => {
+            const item = e.target.closest('.extra-item');
+            if (!item) return;
 
-                item.style.position = 'absolute';
-                item.style.zIndex = 1000;
-                item.style.cursor = 'grabbing';
-            });
+            activeItem = item;
+            offsetX = e.offsetX;
+            offsetY = e.offsetY;
 
-            // Confetti burst on click
-            item.addEventListener('click', (e) => {
-                createConfettiBurst(e.currentTarget);
-            });
+            item.style.position = 'absolute';
+            item.style.zIndex = 1000;
+            item.style.cursor = 'grabbing';
         });
 
-        // Drag movement
+        // Drag move
         document.addEventListener('mousemove', (e) => {
             if (!activeItem) return;
 
@@ -98,7 +91,15 @@
             activeItem = null;
         });
 
-        // Confetti burst function
+        // Confetti burst on click
+        document.addEventListener('click', (e) => {
+            const item = e.target.closest('.extra-item');
+            if (!item) return;
+
+            createConfettiBurst(item);
+        });
+
+        // Confetti function
         function createConfettiBurst(element) {
             const rect = element.getBoundingClientRect();
             const centerX = rect.left + rect.width / 2;
@@ -121,11 +122,11 @@
 
                 requestAnimationFrame(() => {
                     sparkle.style.transform = `
-                        translate(
-                            ${Math.cos(angle) * distance}px,
-                            ${Math.sin(angle) * distance}px
-                        )
-                    `;
+                translate(
+                    ${Math.cos(angle) * distance}px,
+                    ${Math.sin(angle) * distance}px
+                )
+            `;
                     sparkle.style.opacity = '0';
                 });
 
