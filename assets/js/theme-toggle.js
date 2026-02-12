@@ -1,9 +1,13 @@
 (() => {
     const root = document.documentElement;
     const storageKey = 'theme';
-    const icon = document.getElementById('theme-icon');
+
+    function getIcon() {
+        return document.getElementById('theme-icon');
+    }
 
     function updateIcon(isDark) {
+        const icon = getIcon();
         if (!icon) return;
         icon.textContent = isDark ? '☀️' : '🌙';
     }
@@ -18,11 +22,12 @@
         }
     }
 
-    // On load
-    const savedTheme = localStorage.getItem(storageKey);
-    applyTheme(savedTheme === 'dark' ? 'dark' : 'light');
+    // Apply saved theme after full DOM + partials load
+    window.addEventListener('load', () => {
+        const savedTheme = localStorage.getItem(storageKey);
+        applyTheme(savedTheme === 'dark' ? 'dark' : 'light');
+    });
 
-    // Expose toggle globally
     window.toggleTheme = function () {
         const isDark = root.hasAttribute('data-theme');
         const newTheme = isDark ? 'light' : 'dark';
