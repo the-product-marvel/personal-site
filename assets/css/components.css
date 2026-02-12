@@ -158,6 +158,34 @@ header {
 }
 
 /* =========================================================
+   SKILLS AND STACK LIST
+   ========================================================= */
+
+.skills-stack {
+    list-style: none;
+    padding: 0;
+    margin-top: var(--spacing-md);
+}
+
+.skills-stack li {
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid transparent;
+    border-radius: var(--radius-sm);
+    transition: all 0.25s ease;
+}
+
+.skills-stack li:hover {
+    border-left-color: var(--color-mauve);
+    background: var(--color-mauve-soft);
+}
+
+.skills-stack strong {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+/* =========================================================
    EXTRAS LIST (BEYOND THE ROADMAP)
    ========================================================= */
 
