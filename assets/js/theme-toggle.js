@@ -1,3 +1,5 @@
+console.log("Theme toggle loaded");
+
 (() => {
     const root = document.documentElement;
     const storageKey = 'theme';
