@@ -1,21 +1,12 @@
-console.log("Theme toggle loaded");
-
 (() => {
     const root = document.documentElement;
     const storageKey = 'theme';
 
-    function getButton() {
-        return document.querySelector('.theme-toggle');
-    }
-
-    function getIcon() {
-        return document.getElementById('theme-icon');
-    }
-
     function updateIcon(isDark) {
-        const icon = getIcon();
-        if (!icon) return;
-        icon.textContent = isDark ? '☀️' : '🌙';
+        const icon = document.getElementById('theme-icon');
+        if (icon) {
+            icon.textContent = isDark ? '☀️' : '🌙';
+        }
     }
 
     function applyTheme(theme) {
@@ -38,18 +29,21 @@ console.log("Theme toggle loaded");
         applyTheme(newTheme);
     }
 
-    // Wait until full page (including partials) is loaded
-    window.addEventListener('load', () => {
-        console.log("Load fired");
+    // Apply saved theme immediately
+    const savedTheme = localStorage.getItem(storageKey);
+    applyTheme(savedTheme === 'dark' ? 'dark' : 'light');
 
-        // Apply saved theme
-        const savedTheme = localStorage.getItem(storageKey);
-        applyTheme(savedTheme === 'dark' ? 'dark' : 'light');
-        console.log("Button found:", button);
-        // Attach click handler AFTER partials exist
-        const button = getButton();
-        if (button) {
+    // Watch for when partials inject the button
+    const observer = new MutationObserver(() => {
+        const button = document.querySelector('.theme-toggle');
+        if (button && !button.dataset.listenerAttached) {
             button.addEventListener('click', toggleTheme);
+            button.dataset.listenerAttached = "true";
         }
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
     });
 })();
