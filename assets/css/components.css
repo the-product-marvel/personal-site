@@ -161,13 +161,13 @@ header {
    SKILLS AND STACK LIST
    ========================================================= */
 
-.skills-stack {
+.skills {
     list-style: none;
     padding: 0;
     margin-top: var(--spacing-md);
 }
 
-.skills-stack li {
+.skills li {
     padding: 1rem 1.25rem;
     margin-bottom: 1rem;
     border-left: 3px solid transparent;
@@ -175,12 +175,12 @@ header {
     transition: all 0.25s ease;
 }
 
-.skills-stack li:hover {
+.skills li:hover {
     border-left-color: var(--color-mauve);
     background: var(--color-mauve-soft);
 }
 
-.skills-stack strong {
+.skills strong {
     display: block;
     margin-bottom: 0.25rem;
 }
