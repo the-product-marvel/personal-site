@@ -75,11 +75,23 @@
 }
 
 /* =========================================================
-   THEME - DARK MODE (auto)
+   THEME - DARK MODE (auto + manual toggle)
    ========================================================= */
 
+/* Manual dark mode (via JS toggle) */
+html[data-theme="dark"] {
+    --color-bg: #0f0f10;
+    --color-text: #f3f3f4;
+    --color-muted: #a1a1aa;
+    --color-border: #1f1f23;
+
+    --glow-soft: rgba(206, 156, 156, 0.35);
+    --glow-faint: rgba(206, 156, 156, 0.2);
+}
+
+/* Auto dark mode (if user prefers dark AND no manual override) */
 @media (prefers-color-scheme: dark) {
-    :root {
+    html:not([data-theme]) {
         --color-bg: #0f0f10;
         --color-text: #f3f3f4;
         --color-muted: #a1a1aa;
