@@ -54,12 +54,13 @@
         }
 
         /* =========================================================
-           PLAYFUL EXTRAS ENHANCEMENTS (Delegated + Reliable)
+           PLAYFUL EXTRAS ENHANCEMENTS (Clean Click vs Drag)
            ========================================================= */
 
         let activeItem = null;
         let offsetX = 0;
         let offsetY = 0;
+        let isDragging = false;
 
         // Drag start
         document.addEventListener('mousedown', (e) => {
@@ -69,34 +70,34 @@
             activeItem = item;
             offsetX = e.offsetX;
             offsetY = e.offsetY;
-
-            item.style.position = 'absolute';
-            item.style.zIndex = 1000;
-            item.style.cursor = 'grabbing';
+            isDragging = false;
         });
 
         // Drag move
         document.addEventListener('mousemove', (e) => {
             if (!activeItem) return;
 
+            isDragging = true;
+
+            activeItem.style.position = 'absolute';
+            activeItem.style.zIndex = 1000;
+            activeItem.style.cursor = 'grabbing';
             activeItem.style.left = `${e.pageX - offsetX}px`;
             activeItem.style.top = `${e.pageY - offsetY}px`;
         });
 
         // Drag end
-        document.addEventListener('mouseup', () => {
+        document.addEventListener('mouseup', (e) => {
             if (!activeItem) return;
+
+            // If it was NOT dragged, treat it as a click
+            if (!isDragging) {
+                createConfettiBurst(activeItem);
+            }
 
             activeItem.style.cursor = 'grab';
             activeItem = null;
-        });
-
-        // Confetti burst on click
-        document.addEventListener('click', (e) => {
-            const item = e.target.closest('.extra-item');
-            if (!item) return;
-
-            createConfettiBurst(item);
+            isDragging = false;
         });
 
         // Confetti function
