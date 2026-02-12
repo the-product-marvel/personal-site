@@ -186,7 +186,7 @@ header {
 }
 
 /* =========================================================
-   EXTRAS — PLAYFUL MODE
+   EXTRAS — CREATIVE & FUN
    ========================================================= */
 
 .extras-list {
@@ -197,69 +197,53 @@ header {
 }
 
 .extra-item {
-    position: relative;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+
     padding: 0.7rem 1.2rem;
     border-radius: var(--radius-pill);
+
     font-weight: 500;
     font-size: 0.95rem;
-    cursor: grab;
-    user-select: none;
 
-    background: var(--color-mauve-soft);
+    background: rgba(206, 156, 156, 0.16);
+
     transition: transform 0.25s ease,
         box-shadow 0.25s ease,
         background 0.25s ease;
 
-    animation: badgeFloatIn 0.6s ease both;
+    animation: floatIn 0.6s ease both;
 }
 
-/* Slight random rotation illusion */
+/* Natural scattered feel */
 .extra-item:nth-child(1) {
+    transform: rotate(-2deg);
+}
+
+.extra-item:nth-child(2) {
+    transform: rotate(1.5deg);
+}
+
+.extra-item:nth-child(3) {
     transform: rotate(-1deg);
 }
 
-.extra-item:nth-child(2) {
-    transform: rotate(1deg);
-}
-
-.extra-item:nth-child(3) {
-    transform: rotate(-0.5deg);
-}
-
 .extra-item:nth-child(4) {
-    transform: rotate(0.8deg);
+    transform: rotate(2deg);
 }
 
-/* Soft color shifts */
-.extra-item:nth-child(1) {
-    background: rgba(206, 156, 156, 0.18);
-}
-
-.extra-item:nth-child(2) {
-    background: rgba(206, 156, 156, 0.14);
-}
-
-.extra-item:nth-child(3) {
-    background: rgba(206, 156, 156, 0.20);
-}
-
-.extra-item:nth-child(4) {
-    background: rgba(206, 156, 156, 0.16);
-}
-
-/* Hover effect */
+/* Playful hover wobble */
 .extra-item:hover {
-    transform: translateY(-6px) rotate(0deg) scale(1.05);
-    box-shadow: 0 14px 30px var(--glow-soft);
+    animation: wobble 0.4s ease;
+    box-shadow: 0 12px 28px var(--glow-soft);
+    background: rgba(206, 156, 156, 0.22);
 }
 
 /* Emoji bounce */
 .emoji {
     display: inline-block;
-    animation: emojiBounce 2.5s ease-in-out infinite;
+    animation: emojiBounce 2.8s ease-in-out infinite;
 }
 
 .extra-item:nth-child(2) .emoji {
@@ -369,6 +353,28 @@ header {
     to {
         opacity: 1;
         transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes wobble {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(3deg);
+    }
+
+    50% {
+        transform: rotate(-3deg);
+    }
+
+    75% {
+        transform: rotate(2deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
     }
 }
 
