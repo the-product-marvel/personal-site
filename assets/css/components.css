@@ -186,79 +186,6 @@ header {
 }
 
 /* =========================================================
-   EXTRAS — CREATIVE & FUN
-   ========================================================= */
-
-.extras-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 1.5rem;
-}
-
-.extra-item {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-
-    padding: 0.7rem 1.2rem;
-    border-radius: var(--radius-pill);
-
-    font-weight: 500;
-    font-size: 0.95rem;
-
-    background: rgba(206, 156, 156, 0.16);
-
-    transition: transform 0.25s ease,
-        box-shadow 0.25s ease,
-        background 0.25s ease;
-
-    animation: floatIn 0.6s ease both;
-}
-
-/* Natural scattered feel */
-.extra-item:nth-child(1) {
-    transform: rotate(-2deg);
-}
-
-.extra-item:nth-child(2) {
-    transform: rotate(1.5deg);
-}
-
-.extra-item:nth-child(3) {
-    transform: rotate(-1deg);
-}
-
-.extra-item:nth-child(4) {
-    transform: rotate(2deg);
-}
-
-/* Playful hover wobble */
-.extra-item:hover {
-    animation: wobble 0.4s ease;
-    box-shadow: 0 12px 28px var(--glow-soft);
-    background: rgba(206, 156, 156, 0.22);
-}
-
-/* Emoji bounce */
-.emoji {
-    display: inline-block;
-    animation: emojiBounce 2.8s ease-in-out infinite;
-}
-
-.extra-item:nth-child(2) .emoji {
-    animation-delay: 0.3s;
-}
-
-.extra-item:nth-child(3) .emoji {
-    animation-delay: 0.6s;
-}
-
-.extra-item:nth-child(4) .emoji {
-    animation-delay: 0.9s;
-}
-
-/* =========================================================
    FOOTER (UNIFIED + GLOW)
    ========================================================= */
 
@@ -425,5 +352,110 @@ header {
         opacity: 1;
         transform: none;
 
+    }
+}
+
+/* =========================================================
+   EXTRAS — CREATIVE & FUN (FINAL)
+   ========================================================= */
+
+.extras-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.extra-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    padding: 0.7rem 1.2rem;
+    border-radius: var(--radius-pill);
+
+    font-weight: 500;
+    font-size: 0.95rem;
+
+    background: rgba(206, 156, 156, 0.16);
+
+    transition: transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+
+    animation: floatIn 0.6s ease both;
+}
+
+/* Scattered sticker feel */
+.extra-item:nth-child(1) {
+    transform: rotate(-2deg);
+}
+
+.extra-item:nth-child(2) {
+    transform: rotate(1.5deg);
+}
+
+.extra-item:nth-child(3) {
+    transform: rotate(-1deg);
+}
+
+.extra-item:nth-child(4) {
+    transform: rotate(2deg);
+}
+
+.extra-item:hover {
+    animation: wobble 0.4s ease;
+    box-shadow: 0 12px 28px var(--glow-soft);
+    background: rgba(206, 156, 156, 0.22);
+}
+
+.emoji {
+    display: inline-block;
+    animation: emojiBounce 2.8s ease-in-out infinite;
+}
+
+.extra-item:nth-child(2) .emoji {
+    animation-delay: 0.3s;
+}
+
+.extra-item:nth-child(3) .emoji {
+    animation-delay: 0.6s;
+}
+
+.extra-item:nth-child(4) .emoji {
+    animation-delay: 0.9s;
+}
+
+@keyframes wobble {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(3deg);
+    }
+
+    50% {
+        transform: rotate(-3deg);
+    }
+
+    75% {
+        transform: rotate(2deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes emojiBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
     }
 }
