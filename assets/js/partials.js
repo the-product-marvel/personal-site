@@ -1,4 +1,6 @@
 // Partials loader + site enhancements
+alert("partials.js is running");
+
 (async () => {
     try {
         const slots = document.querySelectorAll('[data-partial]');
