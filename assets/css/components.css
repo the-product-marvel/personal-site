@@ -18,40 +18,6 @@ section {
    HEADER
    ========================================================= */
 
-.about-section {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-}
-
-.page-header {
-    text-align: center;
-    /* header + lead centered */
-    margin-bottom: 2.5rem;
-}
-
-.page-header .lead {
-    text-align: center;
-    /* center the "A little context..." */
-    margin-top: 1rem;
-    font-style: italic;
-    /* optional: give it a subtle emphasis */
-    color: var(--color-muted);
-}
-
-.content-container h2 {
-    text-align: left;
-    /* body header left-aligned */
-    margin-top: 2rem;
-}
-
-.content-container p {
-    text-align: left;
-    /* main body left-aligned */
-    margin-top: 1rem;
-    line-height: 1.7;
-}
-
 header.reveal {
     display: grid;
     place-items: center;
