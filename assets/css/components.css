@@ -158,7 +158,7 @@ header {
 }
 
 /* =========================================================
-   SKILLS AND STACK LIST
+   SKILL STACK LIST
    ========================================================= */
 
 .skills {
@@ -427,33 +427,44 @@ header {
 }
 
 /* =========================================================
-   CURRENTLY EXPLORING
+   CURRENTLY EXPLORING (COLUMN LAYOUT + MAUVE GLOW)
    ========================================================= */
 
 .skill-stack {
     margin-top: 2rem;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+/* Stack into one column on small screens */
+@media (max-width: 768px) {
+    .skill-stack {
+        grid-template-columns: 1fr;
+    }
 }
 
 .skill-item {
     position: relative;
-    padding: 1.2rem 1.4rem;
-    margin-bottom: 1.2rem;
+    padding: 1.4rem 1.6rem;
 
-    border: 1px solid var(--color-border);
-    border-radius: 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(206, 156, 156, 0.2);
 
-    background: var(--color-bg);
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(4px);
 
     transition: transform 0.3s ease,
         box-shadow 0.3s ease,
         border-color 0.3s ease;
 
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(20px);
     animation: stackRise 0.6s ease forwards;
 }
 
-/* Staggered rise */
+/* Stagger */
 .skill-item:nth-child(1) {
     animation-delay: 0.05s;
 }
@@ -470,28 +481,28 @@ header {
     animation-delay: 0.35s;
 }
 
-/* Subtle elevation on hover */
+/* Mauve glow on hover */
 .skill-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    border-color: var(--glow-soft);
+    transform: translateY(-6px);
+    border-color: rgba(206, 156, 156, 0.5);
+    box-shadow: 0 12px 35px rgba(206, 156, 156, 0.25);
 }
 
 .skill-header {
     font-weight: 600;
-    font-size: 1rem;
-    margin-bottom: 0.35rem;
+    font-size: 1.05rem;
+    margin-bottom: 0.4rem;
 }
 
 .skill-desc {
     color: var(--color-muted);
     font-size: 0.95rem;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .micro-note {
     display: block;
-    margin-top: 0.4rem;
+    margin-top: 0.5rem;
     font-size: 0.85rem;
     opacity: 0.7;
 }
