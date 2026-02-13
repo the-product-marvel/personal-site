@@ -18,6 +18,18 @@ section {
    HEADER
    ========================================================= */
 
+.page-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.page-header .lead {
+    text-align: left;
+    max-width: 640px;
+    margin: 1rem auto 0 auto;
+    color: var(--color-muted);
+}
+
 header.reveal {
     display: grid;
     place-items: center;

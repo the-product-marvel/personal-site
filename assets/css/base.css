@@ -78,7 +78,7 @@ h3 {
    CONTENT FLOW
    ========================================================= */
 
-section p {
+.section-content p {
     text-align: justify;
     text-justify: inter-word;
 }
