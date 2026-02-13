@@ -430,63 +430,74 @@ header {
    CURRENTLY EXPLORING
    ========================================================= */
 
-.explore-list {
-    list-style: none;
-    padding: 0;
-    margin-top: 1.5rem;
+.skill-stack {
+    margin-top: 2rem;
 }
 
-.explore-list li {
+.skill-item {
     position: relative;
-    padding: 1rem 1rem 1rem 1.5rem;
+    padding: 1.2rem 1.4rem;
     margin-bottom: 1.2rem;
 
-    border-left: 3px solid var(--color-border);
-    transition: transform 0.25s ease,
-        border-color 0.25s ease,
-        background 0.25s ease;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+
+    background: var(--color-bg);
+
+    transition: transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
 
     opacity: 0;
-    transform: translateY(10px);
-    animation: exploreFade 0.6s ease forwards;
+    transform: translateY(16px);
+    animation: stackRise 0.6s ease forwards;
 }
 
-/* Stagger */
-.explore-list li:nth-child(1) {
+/* Staggered rise */
+.skill-item:nth-child(1) {
     animation-delay: 0.05s;
 }
 
-.explore-list li:nth-child(2) {
+.skill-item:nth-child(2) {
     animation-delay: 0.15s;
 }
 
-.explore-list li:nth-child(3) {
+.skill-item:nth-child(3) {
     animation-delay: 0.25s;
 }
 
-.explore-list li:nth-child(4) {
+.skill-item:nth-child(4) {
     animation-delay: 0.35s;
 }
 
-.explore-list li:hover {
-    transform: translateX(6px);
+/* Subtle elevation on hover */
+.skill-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     border-color: var(--glow-soft);
-    background: rgba(206, 156, 156, 0.08);
 }
 
-.explore-list strong {
-    display: block;
+.skill-header {
     font-weight: 600;
-    margin-bottom: 0.2rem;
+    font-size: 1rem;
+    margin-bottom: 0.35rem;
 }
 
-.explore-list span {
+.skill-desc {
     color: var(--color-muted);
     font-size: 0.95rem;
+    line-height: 1.5;
 }
 
-/* Fade-in animation */
-@keyframes exploreFade {
+.micro-note {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+/* Entry animation */
+@keyframes stackRise {
     to {
         opacity: 1;
         transform: translateY(0);
