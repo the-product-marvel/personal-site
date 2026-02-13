@@ -102,111 +102,6 @@ header {
 }
 
 /* =========================================================
-   CURRENTLY EXPLORING — CREATIVE & FUN (FINAL)
-   ========================================================= */
-
-.exploring-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 1.5rem;
-}
-
-.explore-item {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-
-    padding: 0.7rem 1.2rem;
-    border-radius: var(--radius-pill);
-
-    font-weight: 500;
-    font-size: 0.95rem;
-
-    background: rgba(206, 156, 156, 0.16);
-
-    transition: transform 0.25s ease,
-        box-shadow 0.25s ease,
-        background 0.25s ease;
-
-    animation: floatIn 0.6s ease both;
-}
-
-/* Scattered sticker feel */
-.explore-item:nth-child(1) {
-    transform: rotate(-2deg);
-}
-
-.explore-item:nth-child(2) {
-    transform: rotate(1.5deg);
-}
-
-.explore-item:nth-child(3) {
-    transform: rotate(-1deg);
-}
-
-.explore-item:nth-child(4) {
-    transform: rotate(2deg);
-}
-
-.explore-item:hover {
-    animation: wobble 0.4s ease;
-    box-shadow: 0 12px 28px var(--glow-soft);
-    background: rgba(206, 156, 156, 0.22);
-}
-
-.emoji {
-    display: inline-block;
-    animation: emojiBounce 2.8s ease-in-out infinite;
-}
-
-.explore-item:nth-child(2) .emoji {
-    animation-delay: 0.3s;
-}
-
-.explore-item:nth-child(3) .emoji {
-    animation-delay: 0.6s;
-}
-
-.explore-item:nth-child(4) .emoji {
-    animation-delay: 0.9s;
-}
-
-@keyframes wobble {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    25% {
-        transform: rotate(3deg);
-    }
-
-    50% {
-        transform: rotate(-3deg);
-    }
-
-    75% {
-        transform: rotate(2deg);
-    }
-
-    100% {
-        transform: rotate(0deg);
-    }
-}
-
-@keyframes emojiBounce {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-4px);
-    }
-}
-
-/* =========================================================
    PRINCIPLES LIST (HOW I THINK — WORKING WITH ME)
    ========================================================= */
 
@@ -528,5 +423,72 @@ header {
 
     50% {
         transform: translateY(-4px);
+    }
+}
+
+/* =========================================================
+   CURRENTLY EXPLORING
+   ========================================================= */
+
+.explore-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+.explore-list li {
+    position: relative;
+    padding: 1rem 1rem 1rem 1.5rem;
+    margin-bottom: 1.2rem;
+
+    border-left: 3px solid var(--color-border);
+    transition: transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+
+    opacity: 0;
+    transform: translateY(10px);
+    animation: exploreFade 0.6s ease forwards;
+}
+
+/* Stagger */
+.explore-list li:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.explore-list li:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.explore-list li:nth-child(3) {
+    animation-delay: 0.25s;
+}
+
+.explore-list li:nth-child(4) {
+    animation-delay: 0.35s;
+}
+
+.explore-list li:hover {
+    transform: translateX(6px);
+    border-color: var(--glow-soft);
+    background: rgba(206, 156, 156, 0.08);
+}
+
+.explore-list strong {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+.explore-list span {
+    color: var(--color-muted);
+    font-size: 0.95rem;
+}
+
+/* Fade-in animation */
+@keyframes exploreFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
