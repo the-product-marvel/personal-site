@@ -57,6 +57,20 @@ header {
     position: relative;
 }
 
+/* =========================================
+   ABOUT PAGE HEADER
+   ========================================= */
+
+main.container>header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+main.container>header .lead {
+    text-align: center;
+    margin-top: 0.75rem;
+}
+
 /* =========================================================
    THEME TOGGLE
    ========================================================= */
