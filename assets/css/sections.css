@@ -242,34 +242,44 @@
    CONNECT SECTION
    ========================================================= */
 
-.connect-section {
+.connect {
     text-align: center;
+    margin-top: 3rem;
 }
 
 .connect-links {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
-    margin-top: 1.5rem;
+    gap: 1.75rem;
+    margin-top: 1.75rem;
 }
 
 .connect-links a {
-    width: 42px;
-    height: 42px;
     display: grid;
     place-items: center;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     border: 1px solid var(--color-border);
-    transition: transform 0.25s ease, background 0.25s ease;
-    color: var(--color-text);
+    background: var(--color-surface);
+    transition: transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
 }
 
 .connect-links a:hover {
     transform: translateY(-4px);
+    border-color: var(--color-mauve);
     background: var(--color-mauve-soft);
 }
 
 .connect-links svg {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
+    fill: var(--color-text);
+    transition: fill 0.25s ease;
+}
+
+.connect-links a:hover svg {
+    fill: var(--color-mauve);
 }
