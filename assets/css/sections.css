@@ -249,14 +249,14 @@
 
 .connect-links {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     gap: 1.75rem;
     margin-top: 1.75rem;
 }
 
 .connect-links a {
     display: grid;
-    place-items: center;
+    place-items: left;
     width: 48px;
     height: 48px;
     border-radius: 50%;
