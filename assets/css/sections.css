@@ -243,20 +243,20 @@
    ========================================================= */
 
 .connect {
-    text-align: left;
+    text-align: center;
     margin-top: 3rem;
 }
 
 .connect-links {
     display: flex;
-    justify-content: left;
+    justify-content: center;
     gap: 1.75rem;
     margin-top: 1.75rem;
 }
 
 .connect-links a {
     display: grid;
-    place-items: left;
+    place-items: center;
     width: 48px;
     height: 48px;
     border-radius: 50%;
