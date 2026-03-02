@@ -1,76 +1,3 @@
-/* layout + sections + animations */
-
-/* =========================================================
-   LAYOUT
-   ========================================================= */
-
-.container {
-    max-width: var(--container-width);
-    margin: auto;
-    padding: 2.5rem 1.5rem;
-}
-
-section {
-    scroll-margin-top: 80px;
-}
-
-/* =========================================================
-   HEADER
-   ========================================================= */
-
-header.reveal {
-    display: grid;
-    place-items: center;
-    text-align: center;
-    gap: 0.75rem;
-    margin-bottom: 3rem;
-}
-
-/* Logo */
-header.reveal img {
-    display: block;
-    margin: 0;
-    max-width: 100%;
-}
-
-/* Tagline */
-header.reveal .tagline {
-    line-height: 1.1;
-    margin: 0;
-}
-
-/* Intro paragraph */
-header.reveal p {
-    max-width: 720px;
-    margin: 0;
-    color: var(--color-muted);
-    font-size: 1.05rem;
-}
-
-/* Main heading */
-header.reveal h1 {
-    margin: 0;
-    line-height: 1.1;
-}
-
-header {
-    position: relative;
-}
-
-/* =========================================
-   ABOUT PAGE HEADER
-   ========================================= */
-
-main.container>header {
-    text-align: center;
-    margin-bottom: 2.5rem;
-}
-
-main.container>header .lead {
-    text-align: center;
-    margin-top: 0.75rem;
-}
-
 /* =========================================================
    THEME TOGGLE
    ========================================================= */
@@ -79,15 +6,13 @@ main.container>header .lead {
     position: absolute;
     top: 1.5rem;
     right: 1.5rem;
-
     background: transparent;
     border: 1px solid var(--color-border);
     padding: 0.5rem 0.75rem;
     border-radius: var(--radius-pill);
     cursor: pointer;
-
     font-size: 0.9rem;
-    transition: all 0.25s ease;
+    transition: background 0.25s ease, transform 0.25s ease;
 }
 
 .theme-toggle:hover {
@@ -95,7 +20,7 @@ main.container>header .lead {
 }
 
 /* =========================================================
-   SECTIONS
+   SECTION HELPERS
    ========================================================= */
 
 .section-subtitle {
@@ -116,474 +41,52 @@ main.container>header .lead {
 }
 
 /* =========================================================
-   PRINCIPLES LIST (HOW I THINK — WORKING WITH ME)
+   LIST BLOCKS (Principles, Experience, Skills)
    ========================================================= */
 
-.principles {
-    list-style: none;
-    padding: 0;
-    margin-top: var(--spacing-md);
-}
-
-.principles li {
-    padding: 1rem 1.25rem;
-    margin-bottom: 1rem;
-    border-left: 3px solid transparent;
-    border-radius: var(--radius-sm);
-    transition: all 0.25s ease;
-}
-
-.principles li:hover {
-    border-left-color: var(--color-mauve);
-    background: var(--color-mauve-soft);
-}
-
-.principles strong {
-    display: block;
-    margin-bottom: 0.25rem;
-}
-
-/* =========================================================
-   EXPERIENCES + IMPACT LIST (PREVIOUS ROLES)
-   ========================================================= */
-
-.experience {
-    list-style: none;
-    padding: 0;
-    margin-top: var(--spacing-md);
-}
-
-.experience li {
-    padding: 1rem 1.25rem;
-    margin-bottom: 1rem;
-    border-left: 3px solid transparent;
-    border-radius: var(--radius-sm);
-    transition: all 0.25s ease;
-}
-
-.experience li:hover {
-    border-left-color: var(--color-mauve);
-    background: var(--color-mauve-soft);
-}
-
-.experience strong {
-    display: block;
-    margin-bottom: 0.25rem;
-}
-
-/* =========================================================
-   SKILL STACK LIST
-   ========================================================= */
-
+.principles,
+.experience,
 .skills {
     list-style: none;
     padding: 0;
     margin-top: var(--spacing-md);
 }
 
+.principles li,
+.experience li,
 .skills li {
     padding: 1rem 1.25rem;
     margin-bottom: 1rem;
     border-left: 3px solid transparent;
     border-radius: var(--radius-sm);
-    transition: all 0.25s ease;
+    transition: background 0.25s ease, border-color 0.25s ease;
 }
 
+.principles li:hover,
+.experience li:hover,
 .skills li:hover {
     border-left-color: var(--color-mauve);
     background: var(--color-mauve-soft);
 }
 
+.principles strong,
+.experience strong,
 .skills strong {
     display: block;
     margin-bottom: 0.25rem;
 }
 
 /* =========================================================
-   FOOTER (UNIFIED + GLOW)
-   ========================================================= */
-
-.site-footer {
-    margin-top: 5rem;
-    text-align: center;
-    font-size: 0.9rem;
-    color: var(--color-muted);
-    position: relative;
-    padding: 2.5rem 1rem 1.5rem;
-    overflow: hidden;
-}
-
-.site-footer::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 50% 120%,
-            var(--glow-soft),
-            transparent 60%);
-    opacity: 0;
-    animation: footerGlow 6s ease-in-out infinite;
-    pointer-events: none;
-}
-
-.footer-quote {
-    font-style: italic;
-    background: linear-gradient(90deg, var(--color-mauve), #e6bcbc);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 1rem;
-}
-
-.footer-brand {
-    font-weight: 600;
-    background: linear-gradient(90deg, var(--color-mauve), var(--color-mauve-soft));
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-}
-
-.footer-badges {
-    margin-top: 1.25rem;
-    display: flex;
-    justify-content: center;
-    gap: 1.25rem;
-    flex-wrap: wrap;
-}
-
-.footer-badges img {
-    width: 90px;
-    opacity: 0.9;
-}
-
-/* =========================================================
-   ANIMATIONS
-   ========================================================= */
-
-@keyframes floatIn {
-    from {
-        opacity: 0;
-        transform: translateY(8px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes footerGlow {
-
-    0%,
-    100% {
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 1;
-    }
-}
-
-@keyframes badgeFloatIn {
-    from {
-        opacity: 0;
-        transform: translateY(14px) scale(0.95);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-/* =========================================================
-   REVEAL ANIMATIONS
+   REVEAL ANIMATIONS (UNIFIED)
    ========================================================= */
 
 .reveal {
     opacity: 0;
     transform: translateY(12px);
-    transition: all 0.6s ease;
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* =========================================================
-   ACCESSIBILITY / REDUCED MOTION
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-
-        scroll-behavior: auto !important;
-    }
-
-    .reveal {
-        opacity: 1;
-        transform: none;
-
-    }
-}
-
-/* =========================================================
-   EXTRAS — CREATIVE & FUN (FINAL)
-   ========================================================= */
-
-.extras-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 1.5rem;
-}
-
-.extra-item {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-
-    padding: 0.7rem 1.2rem;
-    border-radius: var(--radius-pill);
-
-    font-weight: 500;
-    font-size: 0.95rem;
-
-    background: rgba(206, 156, 156, 0.16);
-
-    transition: transform 0.25s ease,
-        box-shadow 0.25s ease,
-        background 0.25s ease;
-
-    animation: floatIn 0.6s ease both;
-}
-
-/* Scattered sticker feel */
-.extra-item:nth-child(1) {
-    transform: rotate(-2deg);
-}
-
-.extra-item:nth-child(2) {
-    transform: rotate(1.5deg);
-}
-
-.extra-item:nth-child(3) {
-    transform: rotate(-1deg);
-}
-
-.extra-item:nth-child(4) {
-    transform: rotate(2deg);
-}
-
-.extra-item:hover {
-    animation: wobble 0.4s ease;
-    box-shadow: 0 12px 28px var(--glow-soft);
-    background: rgba(206, 156, 156, 0.22);
-}
-
-.emoji {
-    display: inline-block;
-    animation: emojiBounce 2.8s ease-in-out infinite;
-}
-
-.extra-item:nth-child(2) .emoji {
-    animation-delay: 0.3s;
-}
-
-.extra-item:nth-child(3) .emoji {
-    animation-delay: 0.6s;
-}
-
-.extra-item:nth-child(4) .emoji {
-    animation-delay: 0.9s;
-}
-
-@keyframes wobble {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    25% {
-        transform: rotate(3deg);
-    }
-
-    50% {
-        transform: rotate(-3deg);
-    }
-
-    75% {
-        transform: rotate(2deg);
-    }
-
-    100% {
-        transform: rotate(0deg);
-    }
-}
-
-@keyframes emojiBounce {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-4px);
-    }
-}
-
-/* =========================================================
-   CURRENTLY EXPLORING (COLUMN LAYOUT + MAUVE GLOW)
-   ========================================================= */
-
-.skill-stack {
-    margin-top: 2rem;
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-}
-
-/* Stack into one column on small screens */
-@media (max-width: 768px) {
-    .skill-stack {
-        grid-template-columns: 1fr;
-    }
-}
-
-.skill-item {
-    position: relative;
-    padding: 1.4rem 1.6rem;
-
-    border-radius: 14px;
-    border: 1px solid rgba(206, 156, 156, 0.2);
-
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(4px);
-
-    transition: transform 0.3s ease,
-        box-shadow 0.3s ease,
-        border-color 0.3s ease;
-
-    opacity: 0;
-    transform: translateY(20px);
-    animation: stackRise 0.6s ease forwards;
-}
-
-/* Stagger */
-.skill-item:nth-child(1) {
-    animation-delay: 0.05s;
-}
-
-.skill-item:nth-child(2) {
-    animation-delay: 0.15s;
-}
-
-.skill-item:nth-child(3) {
-    animation-delay: 0.25s;
-}
-
-.skill-item:nth-child(4) {
-    animation-delay: 0.35s;
-}
-
-/* Mauve glow on hover */
-.skill-item:hover {
-    transform: translateY(-6px);
-    border-color: rgba(206, 156, 156, 0.5);
-    box-shadow: 0 12px 35px rgba(206, 156, 156, 0.25);
-}
-
-.skill-header {
-    font-weight: 600;
-    font-size: 1.05rem;
-    margin-bottom: 0.4rem;
-}
-
-.skill-desc {
-    color: var(--color-muted);
-    font-size: 0.95rem;
-    line-height: 1.6;
-}
-
-.micro-note {
-    display: block;
-    margin-top: 0.5rem;
-    font-size: 0.85rem;
-    opacity: 0.7;
-}
-
-/* Entry animation */
-@keyframes stackRise {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* =========================================================
-   WHAT I GEEK OUT ON
-   ========================================================= */
-
-.geek-section {
-    padding: 2rem 2rem;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.geek-header {
-    margin-bottom: 3.5rem;
-}
-
-.geek-sub {
-    margin-top: 1rem;
-    color: rgba(255, 255, 255, 0.6);
-    max-width: 520px;
-}
-
-.geek-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-}
-
-.geek-card {
-    padding: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    background: rgba(255, 255, 255, 0.02);
-    transition: all 0.4s ease;
-}
-
-.geek-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.04);
-}
-
-.geek-tag {
-    display: inline-block;
-    font-size: 0.75rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    opacity: 0.7;
-}
-
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.reveal.active {
     opacity: 1;
     transform: translateY(0);
 }
