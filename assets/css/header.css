@@ -10,8 +10,8 @@ header.reveal {
     display: grid;
     place-items: center;
     text-align: center;
-    gap: 0.75rem;
-    margin-bottom: 3rem;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
 }
 
 header.reveal img {
@@ -27,16 +27,16 @@ header.reveal p {
 header.reveal p {
     max-width: 720px;
     color: var(--color-muted);
-    font-size: 1.05rem;
+    font-size: var(--font-base);
 }
 
 /* About Page Header Override */
 
 main.container>header {
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: var(--space-lg);
 }
 
 main.container>header .lead {
-    margin-top: 0.75rem;
+    margin-top: var(--space-sm);
 }
