@@ -120,7 +120,55 @@
 }
 
 /* =========================================================
-   CURRENTLY EXPLORING
+   WHAT I GEEK OUT ON SECTION
+   ========================================================= */
+
+.geek-section {
+    padding: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.geek-header {
+    margin-bottom: 3.5rem;
+}
+
+.geek-sub {
+    margin-top: 1rem;
+    color: var(--color-muted);
+    max-width: 520px;
+}
+
+.geek-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.geek-card {
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.02);
+    transition: transform 0.4s ease, border-color 0.4s ease, background 0.4s ease;
+}
+
+.geek-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.geek-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    opacity: 0.7;
+}
+
+/* =========================================================
+   CURRENTLY EXPLORING SECTION
    ========================================================= */
 
 .skill-stack {
@@ -191,55 +239,11 @@
 }
 
 /* =========================================================
-   WHAT I GEEK OUT ON
+   FEATURED CASE STUDIES SECTION
    ========================================================= */
 
-.geek-section {
-    padding: 2rem;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.geek-header {
-    margin-bottom: 3.5rem;
-}
-
-.geek-sub {
-    margin-top: 1rem;
-    color: var(--color-muted);
-    max-width: 520px;
-}
-
-.geek-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-}
-
-.geek-card {
-    padding: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    background: rgba(255, 255, 255, 0.02);
-    transition: transform 0.4s ease, border-color 0.4s ease, background 0.4s ease;
-}
-
-.geek-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.04);
-}
-
-.geek-tag {
-    display: inline-block;
-    font-size: 0.75rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    opacity: 0.7;
-}
-
 /* =========================================================
-   CONNECT SECTION
+   LET'S CONNECT SECTION
    ========================================================= */
 
 .connect {
