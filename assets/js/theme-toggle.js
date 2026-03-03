@@ -1,47 +1,56 @@
 (() => {
     const root = document.documentElement;
     const storageKey = 'theme';
+    const button = document.querySelector('.theme-toggle');
+    const icon = document.getElementById('theme-icon');
 
-    function updateIcon(isDark) {
+    function updateIcon(theme) {
         const icon = document.getElementById('theme-icon');
-        if (icon) {
-            icon.textContent = isDark ? '☀️' : '🌙';
+        if (!icon) return;
+
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (theme === 'dark') {
+            icon.textContent = '☀️';   // show sun (click = go light)
+        }
+        else if (theme === 'light') {
+            icon.textContent = '🌙';   // show moon (click = go dark)
+        }
+        else {
+            icon.textContent = '🖥️'; // explicitly show system mode
         }
     }
 
     function applyTheme(theme) {
         if (theme) {
-            root.setAttribute("data-theme", theme);
+            root.setAttribute('data-theme', theme);
         } else {
-            root.removeAttribute("data-theme"); // allow system
+            root.removeAttribute('data-theme'); // system mode
         }
 
-        updateIcon(theme === "dark");
+        updateIcon(theme);
     }
 
-    function toggleTheme() {
-        const current = root.getAttribute("data-theme");
-        const newTheme = current === "dark" ? "light" : "dark";
+    function cycleTheme() {
+        const current = localStorage.getItem(storageKey);
 
-        localStorage.setItem(storageKey, newTheme);
-        applyTheme(newTheme);
+        let next;
+        if (current === 'dark') next = 'light';
+        else if (current === 'light') next = null; // system
+        else next = 'dark';
+
+        if (next) {
+            localStorage.setItem(storageKey, next);
+        } else {
+            localStorage.removeItem(storageKey);
+        }
+
+        applyTheme(next);
     }
 
     // Initial load
     const savedTheme = localStorage.getItem(storageKey);
     applyTheme(savedTheme);
 
-    // Attach button listener when injected
-    const observer = new MutationObserver(() => {
-        const button = document.querySelector('.theme-toggle');
-        if (button && !button.dataset.listenerAttached) {
-            button.addEventListener('click', toggleTheme);
-            button.dataset.listenerAttached = "true";
-        }
-    });
-
-    observer.observe(document.body, {
-        childList: true,
-        subtree: true
-    });
+    button?.addEventListener('click', cycleTheme);
 })();

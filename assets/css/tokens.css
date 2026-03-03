@@ -115,6 +115,7 @@ html[data-theme="light"] {
 /* Auto dark mode (if user prefers dark AND no manual override) */
 @media (prefers-color-scheme: dark) {
     html:not([data-theme]) {
+        /* dark variables */
         --color-bg: #0f0f10;
         --color-text: #f3f3f4;
         --color-muted: #a1a1aa;
