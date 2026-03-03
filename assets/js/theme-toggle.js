@@ -10,30 +10,28 @@
     }
 
     function applyTheme(theme) {
-        const isDark = theme === 'dark';
-
-        if (isDark) {
-            root.setAttribute("data-theme", "light");
+        if (theme) {
+            root.setAttribute("data-theme", theme);
         } else {
-            root.setAttribute("data-theme", "dark");
+            root.removeAttribute("data-theme"); // allow system
         }
 
-        updateIcon(isDark);
+        updateIcon(theme === "dark");
     }
 
     function toggleTheme() {
-        const isDark = root.hasAttribute('data-theme');
-        const newTheme = isDark ? 'light' : 'dark';
+        const current = root.getAttribute("data-theme");
+        const newTheme = current === "dark" ? "light" : "dark";
 
         localStorage.setItem(storageKey, newTheme);
         applyTheme(newTheme);
     }
 
-    // Apply saved theme immediately
+    // Initial load
     const savedTheme = localStorage.getItem(storageKey);
-    applyTheme(savedTheme === 'dark' ? 'dark' : 'light');
+    applyTheme(savedTheme);
 
-    // Watch for when partials inject the button
+    // Attach button listener when injected
     const observer = new MutationObserver(() => {
         const button = document.querySelector('.theme-toggle');
         if (button && !button.dataset.listenerAttached) {
