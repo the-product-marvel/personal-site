@@ -36,7 +36,9 @@
 
 .footer-brand {
     font-weight: 600;
-    background: linear-gradient(90deg, var(--color-mauve), var(--color-mauve-soft));
+    background: linear-gradient(90deg,
+            var(--color-mauve),
+            var(--color-mauve-soft));
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -76,7 +78,10 @@
     font-weight: 500;
     font-size: 0.95rem;
     background: rgba(206, 156, 156, 0.16);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
     animation: floatIn 0.6s ease both;
 }
 
@@ -120,23 +125,43 @@
 }
 
 /* =========================================================
-   WHAT I GEEK OUT ON SECTION
+   SHARED LANDING SECTION SYSTEM
    ========================================================= */
 
-.geek-section {
-    padding: 2rem;
+.landing-section {
+    padding: 4rem 2rem;
     max-width: 1100px;
     margin: 0 auto;
+    position: relative;
 }
+
+.landing-section::before {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin-bottom: 1.5rem;
+    background: var(--glow-soft);
+    border-radius: 2px;
+}
+
+.landing-section h2 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.landing-sub {
+    color: var(--color-muted);
+    max-width: 520px;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   GEEK OUT SECTION
+   ========================================================= */
 
 .geek-header {
     margin-bottom: 3.5rem;
-}
-
-.geek-sub {
-    margin-top: 1rem;
-    color: var(--color-muted);
-    max-width: 520px;
 }
 
 .geek-grid {
@@ -145,17 +170,59 @@
     gap: 2rem;
 }
 
-.geek-card {
-    padding: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    background: rgba(255, 255, 255, 0.02);
-    transition: transform 0.4s ease, border-color 0.4s ease, background 0.4s ease;
+/* Stagger animation */
+.geek-grid .card-glass:nth-child(1) {
+    animation-delay: 0.05s;
 }
 
-.geek-card:hover {
+.geek-grid .card-glass:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.geek-grid .card-glass:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+.geek-grid .card-glass:nth-child(4) {
+    animation-delay: 0.2s;
+}
+
+.geek-grid .card-glass:nth-child(5) {
+    animation-delay: 0.25s;
+}
+
+.geek-grid .card-glass:nth-child(6) {
+    animation-delay: 0.3s;
+}
+
+/* =========================================================
+   CARD SYSTEM (SHARED)
+   ========================================================= */
+
+.card-glass {
+    position: relative;
+    padding: 1.8rem;
+    border-radius: 16px;
+    border: 1px solid var(--color-border);
+    background: linear-gradient(145deg,
+            rgba(255, 255, 255, 0.04),
+            rgba(255, 255, 255, 0.02));
+    backdrop-filter: blur(6px);
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.card-glass:hover {
     transform: translateY(-6px);
-    border-color: rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--glow-soft);
+    box-shadow: 0 10px 35px var(--glow-faint);
+}
+
+.card-glass p {
+    line-height: 1.65;
+    max-width: 38ch;
 }
 
 .geek-tag {
@@ -164,11 +231,14 @@
     letter-spacing: 1px;
     text-transform: uppercase;
     margin-bottom: 1rem;
-    opacity: 0.7;
+    padding: 0.35rem 0.6rem;
+    border-radius: 999px;
+    background: var(--glow-faint);
+    color: var(--color-text);
 }
 
 /* =========================================================
-   CURRENTLY EXPLORING SECTION
+   CURRENTLY EXPLORING
    ========================================================= */
 
 .skill-stack {
@@ -178,51 +248,15 @@
     gap: 1.5rem;
 }
 
-@media (max-width: 768px) {
-    .skill-stack {
-        grid-template-columns: 1fr;
-    }
-}
-
-.skill-item {
-    position: relative;
-    padding: 1.4rem 1.6rem;
-    border-radius: 14px;
-    border: 1px solid rgba(206, 156, 156, 0.2);
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(4px);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: stackRise 0.6s ease forwards;
-}
-
-.skill-item:nth-child(1) {
-    animation-delay: 0.05s;
-}
-
-.skill-item:nth-child(2) {
-    animation-delay: 0.15s;
-}
-
-.skill-item:nth-child(3) {
-    animation-delay: 0.25s;
-}
-
-.skill-item:nth-child(4) {
-    animation-delay: 0.35s;
-}
-
-.skill-item:hover {
-    transform: translateY(-6px);
-    border-color: rgba(206, 156, 156, 0.5);
-    box-shadow: 0 12px 35px rgba(206, 156, 156, 0.25);
-}
-
+/* Skill card content */
 .skill-header {
     font-weight: 600;
-    font-size: 1.05rem;
+    font-size: 1rem;
     margin-bottom: 0.4rem;
+}
+
+.exploring-header {
+    margin-bottom: 3.5rem;
 }
 
 .skill-desc {
@@ -238,12 +272,25 @@
     opacity: 0.7;
 }
 
-/* =========================================================
-   FEATURED CASE STUDIES SECTION
-   ========================================================= */
+/* Optional stagger */
+.skill-stack .skill-item:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.skill-stack .skill-item:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.skill-stack .skill-item:nth-child(3) {
+    animation-delay: 0.25s;
+}
+
+.skill-stack .skill-item:nth-child(4) {
+    animation-delay: 0.35s;
+}
 
 /* =========================================================
-   LET'S CONNECT SECTION
+   LET'S CONNECT
    ========================================================= */
 
 .connect {
@@ -266,7 +313,8 @@
     border-radius: 50%;
     border: 1px solid var(--color-border);
     background: var(--color-surface);
-    transition: transform 0.25s ease,
+    transition:
+        transform 0.25s ease,
         background 0.25s ease,
         border-color 0.25s ease;
 }
@@ -286,4 +334,14 @@
 
 .connect-links a:hover svg {
     fill: var(--color-mauve);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+    .skill-stack {
+        grid-template-columns: 1fr;
+    }
 }
