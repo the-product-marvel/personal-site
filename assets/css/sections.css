@@ -241,51 +241,49 @@
    CURRENTLY EXPLORING
    ========================================================= */
 
-.skill-stack {
+.exploring-grid {
     margin-top: 2rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
 }
 
-/* Skill card content */
-.skill-header {
+/* Card Content */
+
+.exploring-title {
     font-weight: 600;
     font-size: 1rem;
     margin-bottom: 0.4rem;
 }
 
-.exploring-header {
-    margin-bottom: 3.5rem;
-}
-
-.skill-desc {
+.exploring-desc {
     color: var(--color-muted);
     font-size: 0.95rem;
     line-height: 1.6;
 }
 
-.micro-note {
+.exploring-note {
     display: block;
     margin-top: 0.5rem;
     font-size: 0.85rem;
     opacity: 0.7;
 }
 
-/* Optional stagger */
-.skill-stack .skill-item:nth-child(1) {
+/* Optional Stagger Animation */
+
+.exploring-grid .card-glass:nth-child(1) {
     animation-delay: 0.05s;
 }
 
-.skill-stack .skill-item:nth-child(2) {
+.exploring-grid .card-glass:nth-child(2) {
     animation-delay: 0.15s;
 }
 
-.skill-stack .skill-item:nth-child(3) {
+.exploring-grid .card-glass:nth-child(3) {
     animation-delay: 0.25s;
 }
 
-.skill-stack .skill-item:nth-child(4) {
+.exploring-grid .card-glass:nth-child(4) {
     animation-delay: 0.35s;
 }
 
