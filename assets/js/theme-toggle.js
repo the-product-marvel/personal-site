@@ -5,7 +5,6 @@
     const icon = document.getElementById('theme-icon');
 
     function updateIcon(theme) {
-        const icon = document.getElementById('theme-icon');
         if (!icon) return;
 
         const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -17,7 +16,7 @@
             icon.textContent = '🌙';   // show moon (click = go dark)
         }
         else {
-            icon.textContent = '🖥️'; // explicitly show system mode
+            icon.textContent = '🖥️';   // explicitly show system mode
         }
     }
 
@@ -32,9 +31,10 @@
     }
 
     function cycleTheme() {
-        const current = localStorage.getItem(storageKey);
+        const current = root.getAttribute('data-theme');
 
         let next;
+
         if (current === 'dark') next = 'light';
         else if (current === 'light') next = null; // system
         else next = 'dark';
