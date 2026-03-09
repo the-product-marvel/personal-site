@@ -1,4 +1,6 @@
-/* design system (colors, spacing, fonts) */
+/* =========================================================
+   DESIGN SYSTEM — Colors, Spacing, Typography
+   ========================================================= */
 
 /* ================================
    FONTS
@@ -8,7 +10,6 @@
     font-family: 'Inter';
     src: url('../fonts/Inter-Regular.woff2') format('woff2');
     font-weight: 400;
-    font-style: normal;
     font-display: swap;
 }
 
@@ -16,7 +17,6 @@
     font-family: 'Inter';
     src: url('../fonts/Inter-Medium.woff2') format('woff2');
     font-weight: 500;
-    font-style: normal;
     font-display: swap;
 }
 
@@ -24,7 +24,6 @@
     font-family: 'Inter';
     src: url('../fonts/Inter-SemiBold.woff2') format('woff2');
     font-weight: 600;
-    font-style: normal;
     font-display: swap;
 }
 
@@ -32,12 +31,11 @@
     font-family: 'Inter';
     src: url('../fonts/Inter-Bold.woff2') format('woff2');
     font-weight: 700;
-    font-style: normal;
     font-display: swap;
 }
 
 /* =========================================================
-   DESIGN SYSTEM - TOKENS
+   TOKENS — Root defaults (light mode)
    ========================================================= */
 
 :root {
@@ -55,31 +53,31 @@
 
     /* Neutrals */
     --color-bg: #ffffff;
+    --color-surface: #f7f7f7;
     --color-text: #111111;
     --color-muted: #555555;
-    --color-border: #eeeeee;
+    --color-border: #e5e5e5;
 
-    /* Effects */
+    /* Glow effects */
     --glow-soft: rgba(206, 156, 156, 0.25);
     --glow-faint: rgba(206, 156, 156, 0.15);
 
     /* Layout */
     --container-width: 900px;
 
-    /* Spacing Scale
-   0.5rem  = 8px
-   1rem    = 16px
-   1.5rem  = 24px
-   2.5rem  = 40px
-   4rem    = 64px
-   6rem    = 96px
- */
+    /* Spacing scale */
     --space-xs: 0.5rem;
+    /*  8px */
     --space-sm: 1rem;
+    /* 16px */
     --space-md: 1.5rem;
+    /* 24px */
     --space-lg: 2.5rem;
+    /* 40px */
     --space-xl: 4rem;
+    /* 64px */
     --space-2xl: 6rem;
+    /* 96px */
 
     /* Radius */
     --radius-sm: 6px;
@@ -87,36 +85,18 @@
 }
 
 /* =========================================================
-   THEME - DARK MODE (auto + manual toggle)
+   THEME — Dark mode
+   Shared values applied in two cases:
+     1. User's OS prefers dark (and no manual override is set)
+     2. Manual toggle via JS sets data-theme="dark"
+   Note: CSS can't share a ruleset between a selector and a
+   @media block, so the dark values are intentionally repeated.
    ========================================================= */
 
-/* Manual dark mode (via JS toggle) */
-html[data-theme="dark"] {
-    --color-bg: #0f0f10;
-    --color-text: #f3f3f4;
-    --color-muted: #a1a1aa;
-    --color-border: #1f1f23;
-
-    --glow-soft: rgba(206, 156, 156, 0.35);
-    --glow-faint: rgba(206, 156, 156, 0.2);
-}
-
-/* Manual light mode (via JS toggle) */
-html[data-theme="light"] {
-    --color-bg: #ffffff;
-    --color-text: #111111;
-    --color-muted: #666666;
-    --color-border: #e5e5e5;
-
-    --glow-soft: rgba(206, 156, 156, 0.25);
-    --glow-faint: rgba(206, 156, 156, 0.15);
-}
-
-/* Auto dark mode (if user prefers dark AND no manual override) */
 @media (prefers-color-scheme: dark) {
     html:not([data-theme]) {
-        /* dark variables */
         --color-bg: #0f0f10;
+        --color-surface: #1a1a1e;
         --color-text: #f3f3f4;
         --color-muted: #a1a1aa;
         --color-border: #1f1f23;
@@ -125,3 +105,18 @@ html[data-theme="light"] {
         --glow-faint: rgba(206, 156, 156, 0.2);
     }
 }
+
+html[data-theme="dark"] {
+    --color-bg: #0f0f10;
+    --color-surface: #1a1a1e;
+    --color-text: #f3f3f4;
+    --color-muted: #a1a1aa;
+    --color-border: #1f1f23;
+
+    --glow-soft: rgba(206, 156, 156, 0.35);
+    --glow-faint: rgba(206, 156, 156, 0.2);
+}
+
+/* Note: html[data-theme="light"] is intentionally omitted.
+   :root defaults serve as the canonical light theme.
+   Add it back only if you need to force light on dark-OS users. */
