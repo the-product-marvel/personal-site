@@ -37,7 +37,8 @@
             transparent,
             var(--glow-faint),
             transparent);
-    margin: 2rem 0;
+
+    margin: var(--space-xl) 0;
 }
 
 /* =========================================================
