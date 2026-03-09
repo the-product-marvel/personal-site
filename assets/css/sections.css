@@ -327,7 +327,7 @@
    ========================================================= */
 
 @media (max-width: 768px) {
-    .skill-stack {
+    .exploring-grid {
         grid-template-columns: 1fr;
     }
 }
