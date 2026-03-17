@@ -5,32 +5,32 @@
    ================================ */
 
 @font-face {
-    font-family: 'Inter';
-    src: url('../fonts/Inter-Regular.woff2') format('woff2');
+    font-family: 'Source Sans Pro';
+    src: url('../fonts/SourceSansPro-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Inter';
-    src: url('../fonts/Inter-Medium.woff2') format('woff2');
-    font-weight: 500;
-    font-style: normal;
+    font-family: 'Source Sans Pro';
+    src: url('../fonts/SourceSansPro-Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Inter';
-    src: url('../fonts/Inter-SemiBold.woff2') format('woff2');
+    font-family: 'Source Sans Pro';
+    src: url('../fonts/SourceSansPro-Semibold.woff2') format('woff2');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Inter';
-    src: url('../fonts/Inter-Bold.woff2') format('woff2');
+    font-family: 'Source Sans Pro';
+    src: url('../fonts/SourceSansPro-Bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -42,12 +42,20 @@
 
 :root {
     /* Typography */
-    --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-primary: 'Source Sans Pro', system-ui, -apple-system, sans-serif;
+
+    --font-sm: 0.875rem;
     --font-base: 1rem;
-    --font-sm: 0.9rem;
     --font-lg: 1.25rem;
-    --font-xl: clamp(1.6rem, 2.5vw, 2rem);
-    --font-xxl: clamp(2.4rem, 4vw, 3rem);
+    --font-xl: clamp(1.5rem, 2.5vw, 2rem);
+    --font-xxl: clamp(2.25rem, 4vw, 3rem);
+
+    --font-regular: 400;
+    --font-semibold: 600;
+    --font-bold: 700;
+
+    --line-body: 1.6;
+    --line-heading: 1.25;
 
     /* Brand */
     --color-mauve: #ce9c9c;
