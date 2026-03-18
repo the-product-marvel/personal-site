@@ -18,7 +18,7 @@
     inset: 0;
     background: radial-gradient(circle at 50% 120%,
             var(--glow-soft),
-            transparent 60%);
+            transparent 30%);
     opacity: 0;
     animation: footerGlow 6s ease-in-out infinite;
     pointer-events: none;
